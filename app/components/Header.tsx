@@ -4,17 +4,28 @@ import { useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import MegaMenu from './MegaMenu';
 import MobileProductsMenu from './MobileProductsMenu';
+import CorporateTrainingMenu from './CorporateTrainingMenu';
+import CoachingMenu from './CoachingMenu';
+import CoursesMenu from './CoursesMenu';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsMenuOpen, setProductsMenuOpen] = useState(false);
+  const [corporateTrainingMenuOpen, setCorporateTrainingMenuOpen] = useState(false);
+  const [coursesMenuOpen, setCoursesMenuOpen] = useState(false);
+  const [coachingMenuOpen, setCoachingMenuOpen] = useState(false);
 
-  const navigation = [
-    { name: 'Products', href: '#products', hasMegaMenu: true },
-    { name: 'Corporate Training', href: '#training', hasMegaMenu: false },
-    { name: 'Courses', href: '#courses', hasMegaMenu: false },
-    { name: 'Coaching', href: '#coaching', hasMegaMenu: false },
+  const navigation: Array<{
+    name: string;
+    href: string;
+    hasMegaMenu: boolean;
+    menuType?: 'products' | 'corporate-training' | 'courses' | 'coaching';
+  }> = [
+    { name: 'Products', href: '#products', hasMegaMenu: true, menuType: 'products' },
+    { name: 'Corporate Training', href: '#training', hasMegaMenu: true, menuType: 'corporate-training' },
+    { name: 'Courses', href: '#courses', hasMegaMenu: true, menuType: 'courses' },
+    { name: 'Coaching', href: '#coaching', hasMegaMenu: true, menuType: 'coaching' },
   ];
 
   return (
@@ -56,43 +67,200 @@ export default function Header() {
           <div className="hidden md:flex md:items-center md:gap-8">
             {navigation.map((item) => {
               if (item.hasMegaMenu) {
-                return (
-                  <div
-                    key={item.name}
-                    className="relative"
-                    onMouseEnter={() => setProductsMenuOpen(true)}
-                  >
-                    <button
-                      className="text-sm font-medium hover:text-blue-200 transition-colors relative group flex items-center gap-1"
-                      onClick={() => setProductsMenuOpen(!productsMenuOpen)}
+                if (item.menuType === 'products') {
+                  return (
+                    <div
+                      key={item.name}
+                      className="relative"
+                      onMouseEnter={() => {
+                        setProductsMenuOpen(true);
+                        setCorporateTrainingMenuOpen(false);
+                        setCoursesMenuOpen(false);
+                        setCoachingMenuOpen(false);
+                      }}
+                      onMouseLeave={() => setProductsMenuOpen(false)}
                     >
-                      {item.name}
-                      <svg
-                        className={`h-4 w-4 transition-transform duration-200 ${
-                          productsMenuOpen ? 'rotate-180' : ''
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                      <button
+                        className="text-sm font-medium hover:text-blue-200 transition-colors relative group flex items-center gap-1"
+                        onClick={() => {
+                          setProductsMenuOpen(!productsMenuOpen);
+                          setCorporateTrainingMenuOpen(false);
+                          setCoursesMenuOpen(false);
+                          setCoachingMenuOpen(false);
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
-                    </button>
-                    <MegaMenu isOpen={productsMenuOpen} onClose={() => setProductsMenuOpen(false)} />
-                  </div>
-                );
+                        {item.name}
+                        <svg
+                          className={`h-4 w-4 transition-transform duration-200 ${
+                            productsMenuOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
+                      </button>
+                      <MegaMenu isOpen={productsMenuOpen} onClose={() => setProductsMenuOpen(false)} />
+                    </div>
+                  );
+                } else if (item.menuType === 'corporate-training') {
+                  return (
+                    <div
+                      key={item.name}
+                      className="relative"
+                      onMouseEnter={() => {
+                        setCorporateTrainingMenuOpen(true);
+                        setProductsMenuOpen(false);
+                        setCoursesMenuOpen(false);
+                        setCoachingMenuOpen(false);
+                      }}
+                      onMouseLeave={() => setCorporateTrainingMenuOpen(false)}
+                    >
+                      <button
+                        className="text-sm font-medium hover:text-blue-200 transition-colors relative group flex items-center gap-1"
+                        onClick={() => {
+                          setCorporateTrainingMenuOpen(!corporateTrainingMenuOpen);
+                          setProductsMenuOpen(false);
+                          setCoursesMenuOpen(false);
+                          setCoachingMenuOpen(false);
+                        }}
+                      >
+                        {item.name}
+                        <svg
+                          className={`h-4 w-4 transition-transform duration-200 ${
+                            corporateTrainingMenuOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
+                      </button>
+                      <CorporateTrainingMenu 
+                        isOpen={corporateTrainingMenuOpen} 
+                        onClose={() => setCorporateTrainingMenuOpen(false)} 
+                      />
+                    </div>
+                  );
+                } else if (item.menuType === 'courses') {
+                  return (
+                    <div
+                      key={item.name}
+                      className="relative"
+                      onMouseEnter={() => {
+                        setCoursesMenuOpen(true);
+                        setProductsMenuOpen(false);
+                        setCorporateTrainingMenuOpen(false);
+                        setCoachingMenuOpen(false);
+                      }}
+                      onMouseLeave={() => setCoursesMenuOpen(false)}
+                    >
+                      <button
+                        className="text-sm font-medium hover:text-blue-200 transition-colors relative group flex items-center gap-1"
+                        onClick={() => {
+                          setCoursesMenuOpen(!coursesMenuOpen);
+                          setProductsMenuOpen(false);
+                          setCorporateTrainingMenuOpen(false);
+                          setCoachingMenuOpen(false);
+                        }}
+                      >
+                        {item.name}
+                        <svg
+                          className={`h-4 w-4 transition-transform duration-200 ${
+                            coursesMenuOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
+                      </button>
+                      <CoursesMenu 
+                        isOpen={coursesMenuOpen} 
+                        onClose={() => setCoursesMenuOpen(false)} 
+                      />
+                    </div>
+                  );
+                } else if (item.menuType === 'coaching') {
+                  return (
+                    <div
+                      key={item.name}
+                      className="relative"
+                      onMouseEnter={() => {
+                        setCoachingMenuOpen(true);
+                        setProductsMenuOpen(false);
+                        setCorporateTrainingMenuOpen(false);
+                        setCoursesMenuOpen(false);
+                      }}
+                      onMouseLeave={() => setCoachingMenuOpen(false)}
+                    >
+                      <button
+                        className="text-sm font-medium hover:text-blue-200 transition-colors relative group flex items-center gap-1"
+                        onClick={() => {
+                          setCoachingMenuOpen(!coachingMenuOpen);
+                          setProductsMenuOpen(false);
+                          setCorporateTrainingMenuOpen(false);
+                          setCoursesMenuOpen(false);
+                        }}
+                      >
+                        {item.name}
+                        <svg
+                          className={`h-4 w-4 transition-transform duration-200 ${
+                            coachingMenuOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
+                      </button>
+                      <CoachingMenu 
+                        isOpen={coachingMenuOpen} 
+                        onClose={() => setCoachingMenuOpen(false)} 
+                      />
+                    </div>
+                  );
+                }
               }
               return (
                 <a
                   key={item.name}
                   href={item.href}
                   className="text-sm font-medium hover:text-blue-200 transition-colors relative group"
+                  onMouseEnter={() => {
+                    setProductsMenuOpen(false);
+                    setCorporateTrainingMenuOpen(false);
+                    setCoursesMenuOpen(false);
+                    setCoachingMenuOpen(false);
+                  }}
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
@@ -220,32 +388,185 @@ export default function Header() {
               <div key={item.name}>
                 {item.hasMegaMenu ? (
                   <div>
-                    <button
-                      onClick={() => setProductsMenuOpen(!productsMenuOpen)}
-                      className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
-                    >
-                      {item.name}
-                      <svg
-                        className={`h-4 w-4 transition-transform duration-200 ${
-                          productsMenuOpen ? 'rotate-180' : ''
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-                    {productsMenuOpen && (
-                      <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
-                        <MobileProductsMenu onClose={() => setProductsMenuOpen(false)} />
-                      </div>
-                    )}
+                    {item.menuType === 'products' ? (
+                      <>
+                        <button
+                          onClick={() => setProductsMenuOpen(!productsMenuOpen)}
+                          className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                          <svg
+                            className={`h-4 w-4 transition-transform duration-200 ${
+                              productsMenuOpen ? 'rotate-180' : ''
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                        {productsMenuOpen && (
+                          <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
+                            <MobileProductsMenu onClose={() => setProductsMenuOpen(false)} />
+                          </div>
+                        )}
+                      </>
+                    ) : item.menuType === 'corporate-training' ? (
+                      <>
+                        <button
+                          onClick={() => setCorporateTrainingMenuOpen(!corporateTrainingMenuOpen)}
+                          className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                          <svg
+                            className={`h-4 w-4 transition-transform duration-200 ${
+                              corporateTrainingMenuOpen ? 'rotate-180' : ''
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                        {corporateTrainingMenuOpen && (
+                          <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
+                            <a
+                              href="https://trainer.netskill.com/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCorporateTrainingMenuOpen(false)}
+                            >
+                              Join as Netskill Trainer
+                            </a>
+                            <a
+                              href="https://www.netskill.com/genai-mastery-program/"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCorporateTrainingMenuOpen(false)}
+                            >
+                              GenAI Mastery Program
+                            </a>
+                          </div>
+                        )}
+                      </>
+                    ) : item.menuType === 'courses' ? (
+                      <>
+                        <button
+                          onClick={() => setCoursesMenuOpen(!coursesMenuOpen)}
+                          className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                          <svg
+                            className={`h-4 w-4 transition-transform duration-200 ${
+                              coursesMenuOpen ? 'rotate-180' : ''
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                        {coursesMenuOpen && (
+                          <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
+                            <a
+                              href="#course-1"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCoursesMenuOpen(false)}
+                            >
+                              Course Category 1
+                            </a>
+                            <a
+                              href="#course-2"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCoursesMenuOpen(false)}
+                            >
+                              Course Category 2
+                            </a>
+                            <a
+                              href="#course-3"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCoursesMenuOpen(false)}
+                            >
+                              Course Category 3
+                            </a>
+                          </div>
+                        )}
+                      </>
+                    ) : item.menuType === 'coaching' ? (
+                      <>
+                        <button
+                          onClick={() => setCoachingMenuOpen(!coachingMenuOpen)}
+                          className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                          <svg
+                            className={`h-4 w-4 transition-transform duration-200 ${
+                              coachingMenuOpen ? 'rotate-180' : ''
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                        {coachingMenuOpen && (
+                          <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
+                            <a
+                              href="https://www.netskill.com/netskills-one-on-one-coaching/"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCoachingMenuOpen(false)}
+                            >
+                              One-On-One Coaching
+                            </a>
+                            <a
+                              href="https://www.netskill.com/netskills-group-coaching-program/"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCoachingMenuOpen(false)}
+                            >
+                              Group Coaching Program
+                            </a>
+                            <a
+                              href="https://www.netskill.com/netskills-leadership-coaching-program/"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCoachingMenuOpen(false)}
+                            >
+                              Leadership Coaching Program
+                            </a>
+                            <a
+                              href="https://www.netskill.com/netskills-one-on-one-internal-coaching/"
+                              className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
+                              onClick={() => setCoachingMenuOpen(false)}
+                            >
+                              One-On-One Internal Coaching
+                            </a>
+                          </div>
+                        )}
+                      </>
+                    ) : null}
                   </div>
                 ) : (
                   <a
