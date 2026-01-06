@@ -1,0 +1,221 @@
+{
+  "products": [
+    {
+      "id": "lms",
+      "name": "LMS",
+      "description": "A centralized, secure platform to manage, deliver, and track all training programs efficiently.",
+      "icon": "⚙️",
+      "isNew": false,
+      "features": {
+        "sections": [
+          {
+            "title": "AI-Powered Learning",
+            "items": [
+              "AI Chatbots for Learner Support",
+              "AI-Generated Learning Paths",
+              "Personalized Course Recommendations"
+            ]
+          },
+          {
+            "title": "Assessment & Certification",
+            "items": [
+              "Quizzes & Automated Evaluations",
+              "Secure Digital Certificates",
+              "Real-time Performance Insights"
+            ]
+          },
+          {
+            "title": "Audit Trails & Compliance",
+            "items": [
+              "Detailed Logs of User Activities",
+              "ISO & GDPR Compliance Features",
+              "Secure Data Encryption"
+            ]
+          },
+          {
+            "title": "Competency & Skill Management",
+            "items": [
+              "Competency Tracking & Gap Analysis",
+              "Skill Benchmarking & Analytics",
+              "Automated Learning Path Adjustments"
+            ]
+          },
+          {
+            "title": "Integration & Extensibility",
+            "items": [
+              "Seamless Connectivity, Limitless Possibilities",
+              "APIs & Webhooks for Customization",
+              "Third-Party Content (YouTube, Coursera, etc.)"
+            ]
+          },
+          {
+            "title": "Training & Blended",
+            "items": [
+              "Instructor-Led & Self-Paced Learning",
+              "Training Calendar & Session Management",
+              "Blended Learning Paths"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "lxp",
+      "name": "LXP",
+      "description": "AI-powered learning experience platform to drive personalized, engaging, and continuous learning journeys.",
+      "icon": "👤",
+      "isNew": false,
+      "features": {
+        "sections": [
+          {
+            "title": "Advanced Analytics & Reporting",
+            "items": [
+              "Learner Progress & Time Spent Reports",
+              "Skill Development Tracking",
+              "Real-Time Performance Dashboards"
+            ]
+          },
+          {
+            "title": "Content Library & Management",
+            "items": [
+              "Centralized Course Repository",
+              "SCORM & xAPI Compliance",
+              "AI-Summarized Course Content"
+            ]
+          },
+          {
+            "title": "Gamification & Engagement",
+            "items": [
+              "Badges, Points & Leaderboards",
+              "Rewards for Course Completion",
+              "Custom Learning Challenges"
+            ]
+          },
+          {
+            "title": "Mobile & Offline Learning",
+            "items": [
+              "Mobile App Accessibility",
+              "Offline Learning Mode",
+              "Sync Progress Across Devices"
+            ]
+          },
+          {
+            "title": "Personalized Learning Paths",
+            "items": [
+              "AI-Driven Learning Recommendations",
+              "Adaptive Course Suggestions",
+              "Multi-Language Support"
+            ]
+          },
+          {
+            "title": "Social Learning & Collaboration",
+            "items": [
+              "Discussion Boards & Peer Interactions",
+              "Community Forums for Knowledge Sharing",
+              "User-Generated Content Contributions"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "frontline-training",
+      "name": "Frontline Training",
+      "description": "Mobile-first training solutions designed for high-performance frontline workforce enablement",
+      "icon": "✨",
+      "isNew": false,
+      "features": {
+        "sections": [
+          {
+            "title": "Compliance & Certification Tracking",
+            "items": [
+              "Mandatory Compliance Training",
+              "Validate Learning with Verifiable Digital Credentials",
+              "Expiry & Renewal Notifications"
+            ]
+          },
+          {
+            "title": "Corporate & Workforce Training",
+            "items": [
+              "Enterprise Learning Programs",
+              "Role-Based Skill Development",
+              "Industry-Specific Learning Tracks"
+            ]
+          },
+          {
+            "title": "Custom Learning Paths for Employees",
+            "items": [
+              "Tailored Training Journeys",
+              "AI-Driven Skill Enhancement Plans",
+              "Flexible Course Enrollments"
+            ]
+          },
+          {
+            "title": "Instructor-Led & Self-Paced Learning",
+            "items": [
+              "Scheduled Live Training Sessions",
+              "Self-Guided Course Access",
+              "Hybrid Training Models"
+            ]
+          },
+          {
+            "title": "Microlearning & Modular Learning",
+            "items": [
+              "Short, Engaging Learning Modules",
+              "Video-Based Learning Segments",
+              "Interactive Lesson Units"
+            ]
+          },
+          {
+            "title": "Skill Assessment & Feedback",
+            "items": [
+              "Measure Skills, Track Growth",
+              "360-Degree Feedback from Trainers",
+              "Automated Course Progress Tracking"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-learning-platform",
+      "name": "E-Learning Platform",
+      "description": "NetSkill is your platform to launch and grow your online courses with ease",
+      "icon": "📚",
+      "isNew": true,
+      "features": {
+        "sections": []
+      }
+    },
+    {
+      "id": "ai-roleplay",
+      "name": "AI Roleplay",
+      "description": "Train for real-world roles by chatting with AI personas and getting instant feedback",
+      "icon": "🤖",
+      "isNew": true,
+      "features": {
+        "sections": []
+      }
+    },
+    {
+      "id": "ai-assessment",
+      "name": "AI Assessment Platform",
+      "description": "AI-driven talent assessment platform designed to identify and validate skills.",
+      "icon": "🚀",
+      "isNew": true,
+      "features": {
+        "sections": []
+      }
+    },
+    {
+      "id": "co-author-ai",
+      "name": "Co-author AI Tool",
+      "description": "AI-powered tool to instantly create and collaborate on e-learning content.",
+      "icon": "🚀",
+      "isNew": true,
+      "features": {
+        "sections": []
+      }
+    }
+  ]
+}
