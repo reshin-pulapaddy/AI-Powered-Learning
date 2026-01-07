@@ -135,8 +135,8 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between relative z-50">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex flex-col items-start group">
-              <span className="text-2xl md:text-3xl font-bold tracking-tight uppercase leading-none text-white">
+            <Link href="/" className="flex items-center group">
+              <span className="text-xl md:text-2xl lg:text-3xl font-bold tracking-wide text-white hover:text-blue-100 transition-colors font-poppins">
                 CES LEAP ACADEMY
               </span>
             </Link>
