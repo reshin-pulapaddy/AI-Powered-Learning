@@ -54,7 +54,7 @@ export default function MegaMenu({ isOpen, onClose }: { isOpen: boolean; onClose
       ref={menuRef}
       className="fixed left-1/2 -translate-x-1/2 z-40 bg-white dark:bg-gray-800 shadow-2xl border border-gray-200 dark:border-gray-700 rounded-xl hidden md:block animate-in fade-in slide-in-from-top-2 duration-300 overflow-hidden"
       style={{ 
-        top: '107px',
+        top: '90px',
         width: '70%',
         height: '70vh',
         minWidth: '800px',

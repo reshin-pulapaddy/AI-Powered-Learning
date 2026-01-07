@@ -7,6 +7,9 @@ import MobileProductsMenu from './MobileProductsMenu';
 import CorporateTrainingMenu from './CorporateTrainingMenu';
 import CoachingMenu from './CoachingMenu';
 import CoursesMenu from './CoursesMenu';
+import BookDemoModal from './BookDemoModal';
+import LoginModal from './LoginModal';
+import SearchModal from './SearchModal';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -15,6 +18,9 @@ export default function Header() {
   const [corporateTrainingMenuOpen, setCorporateTrainingMenuOpen] = useState(false);
   const [coursesMenuOpen, setCoursesMenuOpen] = useState(false);
   const [coachingMenuOpen, setCoachingMenuOpen] = useState(false);
+  const [isBookDemoModalOpen, setIsBookDemoModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
 
   const navigation: Array<{
     name: string;
@@ -272,27 +278,37 @@ export default function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center gap-4">
             {/* Search Icon */}
-            <button
-              className="hidden md:block p-2 hover:bg-white/10 rounded-md transition-colors"
-              aria-label="Search"
-            >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className="relative">
+              <button
+                onClick={() => setIsSearchModalOpen(!isSearchModalOpen)}
+                className="hidden md:block p-2 hover:bg-white/10 rounded-md transition-colors"
+                aria-label="Search"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+              <SearchModal
+                isOpen={isSearchModalOpen}
+                onClose={() => setIsSearchModalOpen(false)}
+              />
+            </div>
 
             {/* Login Button */}
-            <button className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors">
+            <button
+              onClick={() => setIsLoginModalOpen(true)}
+              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+            >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
@@ -342,12 +358,12 @@ export default function Header() {
             </button>
 
             {/* Schedule Call Button */}
-            <a
-              href="#schedule"
+            <button
+              onClick={() => setIsBookDemoModalOpen(true)}
               className="hidden md:block px-4 py-2 bg-white text-[#14467b] rounded-md text-sm font-medium hover:bg-blue-50 transition-colors"
             >
               Schedule a Call
-            </a>
+            </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -579,16 +595,47 @@ export default function Header() {
                 )}
               </div>
             ))}
-            <a
-              href="#schedule"
-              className="block mt-4 px-3 py-2 bg-white text-[#14467b] rounded-md text-sm font-medium text-center"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                setIsLoginModalOpen(true);
+                setMobileMenuOpen(false);
+              }}
+              className="flex items-center justify-center gap-2 w-full px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+              Login
+            </button>
+            <button
+              onClick={() => {
+                setIsBookDemoModalOpen(true);
+                setMobileMenuOpen(false);
+              }}
+              className="block mt-4 w-full px-3 py-2 bg-white text-[#14467b] rounded-md text-sm font-medium text-center hover:bg-blue-50 transition-colors"
             >
               Schedule a Call
-            </a>
+            </button>
           </div>
         )}
       </nav>
+
+      {/* Book Demo Modal */}
+      <BookDemoModal
+        isOpen={isBookDemoModalOpen}
+        onClose={() => setIsBookDemoModalOpen(false)}
+      />
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+      />
     </header>
   );
 }
