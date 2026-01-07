@@ -23,19 +23,18 @@ export default function CoursesMenu({ isOpen, onClose }: { isOpen: boolean; onCl
 
   if (!isOpen) return null;
 
-  // TODO: Replace with actual courses menu items from the provided HTML structure
   const menuItems = [
     {
-      name: 'Course Category 1',
-      href: '#course-1',
+      name: 'AI Agents Specialization',
+      href: '#ai-agents-specialization',
     },
     {
-      name: 'Course Category 2',
-      href: '#course-2',
+      name: 'Generative AI_ Prompt Engineering',
+      href: '#generative-ai-prompt-engineering',
     },
     {
-      name: 'Course Category 3',
-      href: '#course-3',
+      name: 'Microsoft Copilot for Software Development Specialization',
+      href: '#microsoft-copilot-software-development',
     },
   ];
 
