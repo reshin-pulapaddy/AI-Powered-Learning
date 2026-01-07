@@ -55,10 +55,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#14467b" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f3a5f" },
-  ],
 };
 
 export default function RootLayout({

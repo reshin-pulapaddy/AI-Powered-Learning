@@ -169,7 +169,7 @@ export default function Chatbot() {
           className="fixed bottom-24 right-6 z-[60] w-96 h-[600px] bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300"
         >
           {/* Header */}
-          <div className="bg-[#14467b] text-white p-4 rounded-t-lg flex items-center justify-between">
+          <div className="bg-gradient-to-r from-[#0ea5e9] via-[#06b6d4] to-[#14b8a6] text-white p-4 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                 <svg
@@ -213,7 +213,7 @@ export default function Chatbot() {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
+          <div className="chatbot-messages flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -222,7 +222,7 @@ export default function Chatbot() {
                 <div
                   className={`max-w-[80%] rounded-lg px-4 py-2 ${
                     message.sender === 'user'
-                      ? 'bg-[#14467b] text-white'
+                      ? 'bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white'
                       : 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white'
                   }`}
                 >
@@ -238,7 +238,7 @@ export default function Chatbot() {
                   <button
                     key={index}
                     onClick={() => handleQuickOptionClick(option)}
-                    className="w-full text-left px-4 py-2.5 bg-[#14467b] hover:bg-[#1a5a9a] text-white rounded-lg text-sm transition-colors"
+                    className="w-full text-left px-4 py-2.5 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] hover:from-[#06b6d4] hover:to-[#14b8a6] text-white rounded-lg text-sm transition-all"
                   >
                     {option}
                   </button>
@@ -262,12 +262,12 @@ export default function Chatbot() {
                     : 'Type your message...'
                 }
                 disabled={messages.filter((m) => m.sender === 'user').length === 0}
-                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:bg-gray-700 dark:text-white disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:cursor-not-allowed text-sm"
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] dark:bg-gray-700 dark:text-white disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:cursor-not-allowed text-sm"
               />
               <button
                 type="submit"
                 disabled={!inputValue.trim() || messages.filter((m) => m.sender === 'user').length === 0}
-                className="px-4 py-2 bg-[#14467b] hover:bg-[#1a5a9a] text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] hover:from-[#06b6d4] hover:to-[#14b8a6] text-white rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Send message"
               >
                 <svg
@@ -285,9 +285,7 @@ export default function Chatbot() {
                 </svg>
               </button>
             </form>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
-              Powered by Kriatix.ai
-            </p>
+         
           </div>
         </div>
       )}

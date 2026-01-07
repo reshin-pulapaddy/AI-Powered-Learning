@@ -125,3 +125,26 @@ a:focus-visible {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #0f3a5f;
 }
+
+/* Chatbot scrollbar styles */
+.chatbot-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.dark .chatbot-messages::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ea5e9 0%, #06b6d4 50%, #14b8a6 100%);
+  border-radius: 4px;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #06b6d4 0%, #14b8a6 50%, #0ea5e9 100%);
+}
