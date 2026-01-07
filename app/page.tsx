@@ -8,17 +8,19 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      <Hero />
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <MainContent />
-          </div>
-          <div className="lg:col-span-1">
-            <Sidebar />
+      <main id="main-content">
+        <Hero />
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="grid gap-12 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <MainContent />
+            </div>
+            <aside className="lg:col-span-1">
+              <Sidebar />
+            </aside>
           </div>
         </div>
-      </div>
+      </main>
       <Chatbot />
     </div>
   );

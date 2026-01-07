@@ -60,7 +60,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between relative z-50">
           {/* Logo */}
           <div className="flex-shrink-0">

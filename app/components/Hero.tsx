@@ -51,6 +51,7 @@ export default function Hero() {
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -69,12 +70,13 @@ export default function Hero() {
       </div>
 
       {/* Decorative Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
         <svg
           className="w-full h-12 text-white dark:text-gray-900"
           fill="currentColor"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
+          aria-hidden="true"
         >
           <path d="M0,0 C150,60 350,60 600,30 C850,0 1050,60 1200,30 L1200,120 L0,120 Z"></path>
         </svg>
