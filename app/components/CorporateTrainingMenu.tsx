@@ -25,13 +25,13 @@ export default function CorporateTrainingMenu({ isOpen, onClose }: { isOpen: boo
 
   const menuItems = [
     {
-      name: 'Join as SkillBridge Trainer',
-      href: 'https://trainer.skillbridge.com/',
+      name: 'Join as CES LEAP Academy Trainer',
+      href: 'https://trainer.cesleapacademy.com/',
       target: '_blank',
     },
     {
       name: 'GenAI Mastery Program',
-      href: 'https://www.skillbridge.com/genai-mastery-program/',
+      href: 'https://www.cesleapacademy.com/genai-mastery-program/',
       target: '_self',
     },
   ];

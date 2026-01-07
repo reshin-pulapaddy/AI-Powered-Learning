@@ -44,8 +44,8 @@ export default function Header() {
             <a href="tel:04447410999" className="hover:text-blue-200 transition-colors">
               044 4741 0999
             </a>
-            <a href="mailto:hello@skillbridge.com" className="hover:text-blue-200 transition-colors">
-              hello@skillbridge.com
+            <a href="mailto:hello@cesleapacademy.com" className="hover:text-blue-200 transition-colors">
+              hello@cesleapacademy.com
             </a>
           </div>
           <div className="flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
@@ -67,7 +67,7 @@ export default function Header() {
                 aria-label="Follow us on LinkedIn"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ export default function Header() {
                 aria-label="Follow us on Instagram"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ export default function Header() {
                 aria-label="Follow us on Facebook"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +118,7 @@ export default function Header() {
                 aria-label="Follow us on YouTube"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -137,10 +137,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex flex-col items-start group">
               <span className="text-2xl md:text-3xl font-bold tracking-tight uppercase leading-none text-white">
-                SKILLBRIDGE
-              </span>
-              <span className="text-[10px] md:text-xs font-normal tracking-[0.15em] text-blue-100/90 mt-1 uppercase">
-                by CES
+                CES LEAP ACADEMY
               </span>
             </Link>
           </div>
@@ -559,16 +556,16 @@ export default function Header() {
                         {corporateTrainingMenuOpen && (
                           <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
                             <a
-                              href="https://trainer.skillbridge.com/"
+                              href="https://trainer.cesleapacademy.com/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCorporateTrainingMenuOpen(false)}
                             >
-                              Join as SkillBridge Trainer
+                              Join as CES LEAP Academy Trainer
                             </a>
                             <a
-                              href="https://www.skillbridge.com/genai-mastery-program/"
+                              href="https://www.cesleapacademy.com/genai-mastery-program/"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCorporateTrainingMenuOpen(false)}
                             >
@@ -652,28 +649,28 @@ export default function Header() {
                         {coachingMenuOpen && (
                           <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
                             <a
-                              href="https://www.skillbridge.com/skillbridges-one-on-one-coaching/"
+                              href="https://www.cesleapacademy.com/cesleapacademy-one-on-one-coaching/"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCoachingMenuOpen(false)}
                             >
                               One-On-One Coaching
                             </a>
                             <a
-                              href="https://www.skillbridge.com/skillbridges-group-coaching-program/"
+                              href="https://www.cesleapacademy.com/cesleapacademy-group-coaching-program/"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCoachingMenuOpen(false)}
                             >
                               Group Coaching Program
                             </a>
                             <a
-                              href="https://www.skillbridge.com/skillbridges-leadership-coaching-program/"
+                              href="https://www.cesleapacademy.com/cesleapacademy-leadership-coaching-program/"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCoachingMenuOpen(false)}
                             >
                               Leadership Coaching Program
                             </a>
                             <a
-                              href="https://www.skillbridge.com/skillbridges-one-on-one-internal-coaching/"
+                              href="https://www.cesleapacademy.com/cesleapacademy-one-on-one-internal-coaching/"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCoachingMenuOpen(false)}
                             >

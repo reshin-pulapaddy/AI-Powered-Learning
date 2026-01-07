@@ -8,7 +8,7 @@ export default function MainContent() {
             <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
               With AI-powered learning rapidly transforming corporate training in 2026, companies
               need intelligent, scalable solutions. This article explores the top 10 AI learning
-              platforms that are revolutionizing how teams learn and why SkillBridge stands out among
+              platforms that are revolutionizing how teams learn and why CES LEAP Academy stands out among
               them.
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function MainContent() {
                   1
                 </span>
                 <h3 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">
-                  SkillBridge LMS - The Chennai AI Pioneer
+                  CES LEAP Academy LMS
                 </h3>
               </div>
 

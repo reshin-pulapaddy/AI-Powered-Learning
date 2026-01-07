@@ -18,12 +18,9 @@ export default function Hero() {
                         <div className="inline-block rounded-full bg-white/20 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
                             Corporate Training
                         </div>
-
                         <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                            The Most Advanced AI-Powered Corporate Training Platform            </h1>
-
-                   
-
+                            The Most Advanced AI-Powered Corporate Training Platform
+                        </h1>
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Link
                                 href="#read-more"

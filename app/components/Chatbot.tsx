@@ -14,7 +14,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hi! Welcome to SkillBridge - AI Powered Corporate Training & Upskilling Platform',
+      text: 'Hi! Welcome to CES LEAP Academy - AI Powered Corporate Training & Upskilling Platform',
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -31,7 +31,7 @@ export default function Chatbot() {
 
   const quickOptions = [
     'I represent a company that has training and upskilling needs',
-    'I want a demo of SkillBridge LMS/LXP/Frontline Training Solution',
+    'I want a demo of CES LEAP Academy LMS/LXP/Frontline Training Solution',
     'I want certified trainers for my company\'s training reqs',
     'I\'m a working professional looking to upskill',
     'I\'m just exploring',
@@ -107,7 +107,7 @@ export default function Chatbot() {
     setTimeout(() => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Thank you for your message! Our team will respond to you shortly. For immediate assistance, please call us at +91 7353948100 or email hello@skillbridge.com',
+        text: 'Thank you for your message! Our team will respond to you shortly. For immediate assistance, please call us at +91 7353948100 or email hello@cesleapacademy.com',
         sender: 'bot',
         timestamp: new Date(),
       };
@@ -120,7 +120,7 @@ export default function Chatbot() {
       {/* Chatbot Launcher Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="chatbot-launcher fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#14467b] hover:bg-[#1a5a9a] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 group"
+        className="chatbot-launcher fixed bottom-6 right-6 z-[60] flex items-center justify-center w-16 h-16 bg-[#14467b] hover:bg-[#1a5a9a] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 group"
         aria-label="Open chatbot"
       >
         {isOpen ? (
@@ -166,7 +166,7 @@ export default function Chatbot() {
       {isOpen && (
         <div
           ref={chatContainerRef}
-          className="fixed bottom-24 right-6 z-50 w-96 h-[600px] bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300"
+          className="fixed bottom-24 right-6 z-[60] w-96 h-[600px] bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300"
         >
           {/* Header */}
           <div className="bg-[#14467b] text-white p-4 rounded-t-lg flex items-center justify-between">

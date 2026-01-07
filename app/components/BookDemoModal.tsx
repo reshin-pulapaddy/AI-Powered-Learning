@@ -124,7 +124,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
         {/* Description */}
         <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6">
-          Want to get in touch with SkillBridge? Fill out the form with your inquiry or find the contact details below.
+          Want to get in touch with CES LEAP Academy? Fill out the form with your inquiry or find the contact details below.
         </p>
 
         {/* Form */}

@@ -9,28 +9,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SkillBridge by CES - AI-Powered Corporate Training",
+  title: "CES LEAP Academy - AI-Powered Corporate Training",
   description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
   keywords: ["corporate training", "AI learning", "upskilling", "LMS", "corporate education"],
-  authors: [{ name: "SkillBridge by CES" }],
-  creator: "SkillBridge by CES",
-  publisher: "SkillBridge by CES",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.skillbridge.com"),
+  authors: [{ name: "CES LEAP Academy" }],
+  creator: "CES LEAP Academy",
+  publisher: "CES LEAP Academy",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.cesleapacademy.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "SkillBridge by CES - AI-Powered Corporate Training",
+    title: "CES LEAP Academy - AI-Powered Corporate Training",
     description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
     url: "/",
-    siteName: "SkillBridge by CES",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "SkillBridge by CES" }],
+    siteName: "CES LEAP Academy",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "CES LEAP Academy" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SkillBridge by CES - AI-Powered Corporate Training",
+    title: "CES LEAP Academy - AI-Powered Corporate Training",
     description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
     images: ["/og-image.jpg"],
   },
@@ -69,22 +69,22 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SkillBridge by CES",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.skillbridge.com",
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.skillbridge.com"}/logo.png`,
+    name: "CES LEAP Academy",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.cesleapacademy.com",
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.cesleapacademy.com"}/logo.png`,
     description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-7353948100",
       contactType: "Customer Service",
-      email: "hello@skillbridge.com",
+      email: "hello@cesleapacademy.com",
       areaServed: "IN",
       availableLanguage: "English",
     },
     sameAs: [
-      "https://www.linkedin.com/company/skillbridge",
-      "https://twitter.com/skillbridge",
-      "https://www.facebook.com/skillbridge",
+      "https://www.linkedin.com/company/cesleapacademy",
+      "https://twitter.com/cesleapacademy",
+      "https://www.facebook.com/cesleapacademy",
     ],
   };
 
