@@ -14,7 +14,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hi! Welcome to Netskill - AI Powered Corporate Training & Upskilling Platform',
+      text: 'Hi! Welcome to SkillBridge - AI Powered Corporate Training & Upskilling Platform',
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -31,7 +31,7 @@ export default function Chatbot() {
 
   const quickOptions = [
     'I represent a company that has training and upskilling needs',
-    'I want a demo of NetSkill LMS/LXP/Frontline Training Solution',
+    'I want a demo of SkillBridge LMS/LXP/Frontline Training Solution',
     'I want certified trainers for my company\'s training reqs',
     'I\'m a working professional looking to upskill',
     'I\'m just exploring',
@@ -107,7 +107,7 @@ export default function Chatbot() {
     setTimeout(() => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Thank you for your message! Our team will respond to you shortly. For immediate assistance, please call us at +91 7353948100 or email hello@netskill.com',
+        text: 'Thank you for your message! Our team will respond to you shortly. For immediate assistance, please call us at +91 7353948100 or email hello@skillbridge.com',
         sender: 'bot',
         timestamp: new Date(),
       };

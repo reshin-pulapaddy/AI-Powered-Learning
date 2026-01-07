@@ -9,27 +9,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NETSKILL by GoodWorks - AI-Powered Corporate Training",
+  title: "SkillBridge by CES - AI-Powered Corporate Training",
   description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
   keywords: ["corporate training", "AI learning", "upskilling", "LMS", "corporate education"],
-  authors: [{ name: "NETSKILL by GoodWorks" }],
-  creator: "NETSKILL by GoodWorks",
-  publisher: "NETSKILL by GoodWorks",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.netskill.com"),
+  authors: [{ name: "SkillBridge by CES" }],
+  creator: "SkillBridge by CES",
+  publisher: "SkillBridge by CES",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.skillbridge.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "NETSKILL by GoodWorks - AI-Powered Corporate Training",
+    title: "SkillBridge by CES - AI-Powered Corporate Training",
     description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
     url: "/",
-    siteName: "NETSKILL by GoodWorks",
+    siteName: "SkillBridge by CES",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NETSKILL by GoodWorks - AI-Powered Corporate Training",
+    title: "SkillBridge by CES - AI-Powered Corporate Training",
     description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
   },
   robots: {
@@ -45,11 +45,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "https://portal.cesteam.com/favicon.ico" },
+      { url: "https://portal.cesteam.com/favicon.ico", type: "image/x-icon" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png" },
+      { url: "https://portal.cesteam.com/favicon.ico" },
     ],
   },
   manifest: "/site.webmanifest",
@@ -67,22 +67,22 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "NETSKILL by GoodWorks",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.netskill.com",
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.netskill.com"}/logo.png`,
+    name: "SkillBridge by CES",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.skillbridge.com",
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.skillbridge.com"}/logo.png`,
     description: "Leading corporate training and upskilling platform with AI-powered learning solutions",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-7353948100",
       contactType: "Customer Service",
-      email: "hello@netskill.com",
+      email: "hello@skillbridge.com",
       areaServed: "IN",
       availableLanguage: "English",
     },
     sameAs: [
-      "https://www.linkedin.com/company/netskill",
-      "https://twitter.com/netskill",
-      "https://www.facebook.com/netskill",
+      "https://www.linkedin.com/company/skillbridge",
+      "https://twitter.com/skillbridge",
+      "https://www.facebook.com/skillbridge",
     ],
   };
 

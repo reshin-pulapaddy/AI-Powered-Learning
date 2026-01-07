@@ -25,13 +25,13 @@ export default function CorporateTrainingMenu({ isOpen, onClose }: { isOpen: boo
 
   const menuItems = [
     {
-      name: 'Join as Netskill Trainer',
-      href: 'https://trainer.netskill.com/',
+      name: 'Join as SkillBridge Trainer',
+      href: 'https://trainer.skillbridge.com/',
       target: '_blank',
     },
     {
       name: 'GenAI Mastery Program',
-      href: 'https://www.netskill.com/genai-mastery-program/',
+      href: 'https://www.skillbridge.com/genai-mastery-program/',
       target: '_self',
     },
   ];

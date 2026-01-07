@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.netskill.com/sitemap.xml
+Sitemap: https://www.skillbridge.com/sitemap.xml
 
 # Disallow admin and private areas if any
 # Disallow: /admin/

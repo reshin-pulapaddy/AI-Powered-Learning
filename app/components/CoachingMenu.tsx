@@ -26,19 +26,19 @@ export default function CoachingMenu({ isOpen, onClose }: { isOpen: boolean; onC
   const menuItems = [
     {
       name: 'One-On-One Coaching',
-      href: 'https://www.netskill.com/netskills-one-on-one-coaching/',
+      href: 'https://www.skillbridge.com/skillbridges-one-on-one-coaching/',
     },
     {
       name: 'Group Coaching Program',
-      href: 'https://www.netskill.com/netskills-group-coaching-program/',
+      href: 'https://www.skillbridge.com/skillbridges-group-coaching-program/',
     },
     {
       name: 'Leadership Coaching Program',
-      href: 'https://www.netskill.com/netskills-leadership-coaching-program/',
+      href: 'https://www.skillbridge.com/skillbridges-leadership-coaching-program/',
     },
     {
       name: 'One-On-One Internal Coaching',
-      href: 'https://www.netskill.com/netskills-one-on-one-internal-coaching/',
+      href: 'https://www.skillbridge.com/skillbridges-one-on-one-internal-coaching/',
     },
   ];
 
