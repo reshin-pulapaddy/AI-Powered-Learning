@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef, useEffect, useState } from 'react';
 
 interface LoginModalProps {
@@ -197,16 +198,12 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 Remember me
               </span>
             </label>
-            <a
+            <Link
               href="#forgot-password"
-              onClick={(e) => {
-                e.preventDefault();
-                // Handle forgot password
-              }}
               className="text-sm text-[#14467b] dark:text-blue-400 hover:underline"
             >
               Forgot password?
-            </a>
+            </Link>
           </div>
 
           {/* Submit Button */}
@@ -221,16 +218,12 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
           <div className="text-center pt-2">
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Don't have an account?{' '}
-              <a
+              <Link
                 href="#signup"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // Handle sign up navigation
-                }}
                 className="text-[#14467b] dark:text-blue-400 font-medium hover:underline"
               >
                 Sign up
-              </a>
+              </Link>
             </p>
           </div>
         </form>

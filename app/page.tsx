@@ -2,7 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import MainContent from './components/MainContent';
 import Sidebar from './components/Sidebar';
-import Chatbot from './components/Chatbot';
+import ChatbotWrapper from './components/ChatbotWrapper';
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Chatbot />
+      <ChatbotWrapper />
     </div>
   );
 }

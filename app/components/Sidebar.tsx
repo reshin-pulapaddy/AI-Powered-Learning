@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Sidebar() {
@@ -9,7 +10,7 @@ export default function Sidebar() {
     {
       id: 1,
       title: '15 Best Corporate Training Platforms in 2026: The Ultimate Guide for Future-Ready Workforce Development',
-      date: '15 December, 2025',
+      date: '15 December, 2026',
       image: '📊',
     },
     {
@@ -21,7 +22,7 @@ export default function Sidebar() {
     {
       id: 3,
       title: 'Top 7 LMS for Corporate Training: 2026 Edition',
-      date: '9 December, 2025',
+      date: '9 December, 2026',
       image: '☁️',
     },
   ];
@@ -66,7 +67,7 @@ export default function Sidebar() {
         </h2>
         <div className="space-y-6">
           {recentPosts.map((post) => (
-            <a
+            <Link
               key={post.id}
               href={`#post-${post.id}`}
               className="group flex gap-4 transition-transform hover:scale-[1.02]"
@@ -82,7 +83,7 @@ export default function Sidebar() {
                   {post.date}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -95,7 +96,7 @@ export default function Sidebar() {
         <ul className="space-y-3">
           {categories.map((category, index) => (
             <li key={index}>
-              <a
+              <Link
                 href={`#category-${category.toLowerCase().replace(/\s+/g, '-')}`}
                 className="flex items-center justify-between text-sm text-gray-700 dark:text-gray-300 hover:text-[#14467b] dark:hover:text-blue-400 transition-colors group"
               >
@@ -113,7 +114,7 @@ export default function Sidebar() {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import MegaMenu from './MegaMenu';
@@ -49,12 +50,12 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
             <span className="text-xs">No. 1 Corporate Training & Upskilling Company</span>
-            <a
+            <Link
               href="#contact"
               className="rounded-md bg-white/10 px-3 py-1 text-xs hover:bg-white/20 transition-colors"
             >
               Talk to us
-            </a>
+            </Link>
           </div>
           <div className="flex items-center gap-3">
               {/* LinkedIn Icon */}
@@ -134,14 +135,14 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between relative z-50">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex flex-col items-start group">
+            <Link href="/" className="flex flex-col items-start group">
               <span className="text-2xl md:text-3xl font-bold tracking-tight uppercase leading-none text-white">
                 SKILLBRIDGE
               </span>
               <span className="text-[10px] md:text-xs font-normal tracking-[0.15em] text-blue-100/90 mt-1 uppercase">
                 by CES
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -331,8 +332,32 @@ export default function Header() {
                   );
                 }
               }
+              // Check if it's an external link
+              const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
+              
+              if (isExternal) {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium hover:text-blue-200 transition-colors relative group"
+                    onMouseEnter={() => {
+                      setProductsMenuOpen(false);
+                      setCorporateTrainingMenuOpen(false);
+                      setCoursesMenuOpen(false);
+                      setCoachingMenuOpen(false);
+                    }}
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
+                  </a>
+                );
+              }
+              
               return (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-sm font-medium hover:text-blue-200 transition-colors relative group"
@@ -345,7 +370,7 @@ export default function Header() {
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all group-hover:w-full"></span>
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -577,27 +602,27 @@ export default function Header() {
                         </button>
                         {coursesMenuOpen && (
                           <div className="mt-2 ml-4 space-y-2 border-l-2 border-white/20 pl-4">
-                            <a
+                            <Link
                               href="#course-1"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCoursesMenuOpen(false)}
                             >
                               Course Category 1
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                               href="#course-2"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCoursesMenuOpen(false)}
                             >
                               Course Category 2
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                               href="#course-3"
                               className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
                               onClick={() => setCoursesMenuOpen(false)}
                             >
                               Course Category 3
-                            </a>
+                            </Link>
                           </div>
                         )}
                       </>
@@ -660,13 +685,33 @@ export default function Header() {
                     ) : null}
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
-                    className="block px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
+                  (() => {
+                    const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
+                    if (isExternal) {
+                      return (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </a>
+                      );
+                    }
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="block px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })()
                 )}
               </div>
             ))}

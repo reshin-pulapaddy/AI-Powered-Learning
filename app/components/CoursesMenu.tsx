@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 
 export default function CoursesMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -47,12 +48,12 @@ export default function CoursesMenu({ isOpen, onClose }: { isOpen: boolean; onCl
       <ul className="py-2">
         {menuItems.map((item, index) => (
           <li key={index}>
-            <a
+            <Link
               href={item.href}
               className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-[#14467b] hover:text-white transition-colors"
             >
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

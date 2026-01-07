@@ -1,10 +1,12 @@
+import Link from 'next/link';
+
 export default function MainContent() {
   return (
     <article className="space-y-8">
           {/* Introduction */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-              With AI-powered learning rapidly transforming corporate training in 2025, companies
+              With AI-powered learning rapidly transforming corporate training in 2026, companies
               need intelligent, scalable solutions. This article explores the top 10 AI learning
               platforms that are revolutionizing how teams learn and why SkillBridge stands out among
               them.
@@ -122,12 +124,12 @@ export default function MainContent() {
 
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Demand for{' '}
-              <a
+              <Link
                 href="#ai-lms"
                 className="font-semibold text-[#14467b] dark:text-blue-400 hover:underline"
               >
                 AI-powered LMS solutions
-              </a>{' '}
+              </Link>{' '}
               is surging, studies show adaptive learning tools boost training retention by up to 60%
               and test scores by 62%. Let's see which platforms deliver these capabilities best.
             </p>
@@ -136,7 +138,7 @@ export default function MainContent() {
           {/* Top 10 Platforms Section */}
           <section className="space-y-8">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-              Top 10 AI-Powered Learning Platforms for 2025
+              Top 10 AI-Powered Learning Platforms for 2026
             </h2>
 
             {/* First Platform */}
@@ -168,12 +170,12 @@ export default function MainContent() {
                       <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#14467b]"></span>
                       <span>
                         Automated{' '}
-                        <a
+                        <Link
                           href="#assessments"
                           className="font-semibold text-[#14467b] dark:text-blue-400 hover:underline"
                         >
                           assessments and certifications
-                        </a>{' '}
+                        </Link>{' '}
                         streamline compliance.
                       </span>
                     </li>

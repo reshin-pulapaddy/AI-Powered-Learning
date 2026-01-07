@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import productsData from '../data/products.json';
 
 interface Product {
@@ -16,7 +17,7 @@ export default function MobileProductsMenu({ onClose }: { onClose: () => void })
   return (
     <div className="space-y-2">
       {products.map((product) => (
-        <a
+        <Link
           key={product.id}
           href={`#${product.id}`}
           className="block px-3 py-2 text-sm hover:bg-white/10 rounded-md transition-colors"
@@ -36,7 +37,7 @@ export default function MobileProductsMenu({ onClose }: { onClose: () => void })
               <p className="text-xs text-white/80 mt-0.5">{product.description}</p>
             </div>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );

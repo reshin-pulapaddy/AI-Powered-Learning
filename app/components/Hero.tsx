@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Hero() {
     return (
         <section className="relative overflow-hidden bg-gradient-to-br from-[#14467b] via-[#1a5a9a] to-[#0f3a5f] text-white">
@@ -20,22 +22,22 @@ export default function Hero() {
                             The Most Advanced AI-Powered Corporate Training Platform            </h1>
 
                         <p className="text-lg text-blue-100 sm:text-xl">
-                            June 30, 2025
+                        January 1, 2026
                         </p>
 
                         <div className="flex flex-wrap gap-4 pt-4">
-                            <a
+                            <Link
                                 href="#read-more"
                                 className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-[#14467b] font-semibold hover:bg-blue-50 transition-colors shadow-lg"
                             >
                                 Read Article
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#explore"
                                 className="inline-flex items-center justify-center rounded-lg border-2 border-white px-6 py-3 font-semibold hover:bg-white/10 transition-colors"
                             >
                                 Explore Platforms
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

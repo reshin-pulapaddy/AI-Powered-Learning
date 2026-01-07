@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import productsData from '../data/products.json';
 
@@ -169,23 +170,23 @@ export default function MegaMenu({ isOpen, onClose }: { isOpen: boolean; onClose
                         className={index % 2 === 0 ? 'pr-6 border-r border-gray-200 dark:border-gray-700' : 'pl-6'}
                       >
                         <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3">
-                          <a 
+                          <Link 
                             href={`#${selectedProduct.id}-${section.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}`}
                             className="hover:text-[#14467b] dark:hover:text-blue-400 transition-colors"
                           >
                             {section.title}
-                          </a>
+                          </Link>
                         </h3>
                         <ul className="space-y-2">
                           {section.items.map((item, itemIndex) => (
                             <li key={itemIndex} className="flex items-start gap-2">
                               <span className="mt-1.5 flex h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#14467b] dark:bg-blue-400"></span>
-                              <a
+                              <Link
                                 href={`#${selectedProduct.id}-${item.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '').replace(/\(/g, '').replace(/\)/g, '')}`}
                                 className="text-sm text-gray-700 dark:text-gray-300 hover:text-[#14467b] dark:hover:text-blue-400 transition-colors"
                               >
                                 {item}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>

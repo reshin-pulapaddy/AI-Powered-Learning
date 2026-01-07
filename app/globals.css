@@ -17,11 +17,10 @@
   --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #111827;
-    --foreground: #f9fafb;
-  }
+/* Dark mode variables - using .dark class instead of media query */
+.dark {
+  --background: #111827;
+  --foreground: #f9fafb;
 }
 
 body {
