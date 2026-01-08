@@ -32,8 +32,8 @@ export default function Sidebar() {
   return (
     <aside className="space-y-8">
       {/* Search Bar */}
-      <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 p-6 border border-gray-200 dark:border-gray-700">
-        <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
+      <div className="rounded-xl bg-gray-50 p-6 border border-gray-200">
+        <h2 className="mb-4 text-lg font-semibold text-gray-900">
           Search
         </h2>
         <div className="relative">
@@ -42,7 +42,7 @@ export default function Sidebar() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search..."
-            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 pl-10 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-[#14467b] focus:outline-none focus:ring-2 focus:ring-[#14467b]/20 transition-colors"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 pl-10 text-gray-900 placeholder-gray-500 focus:border-[#14467b] focus:outline-none focus:ring-2 focus:ring-[#14467b]/20 transition-colors"
           />
           <svg
             className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
@@ -61,8 +61,8 @@ export default function Sidebar() {
       </div>
 
       {/* Recent Posts */}
-      <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 p-6 border border-gray-200 dark:border-gray-700">
-        <h2 className="mb-6 text-lg font-semibold text-gray-900 dark:text-white">
+      <div className="rounded-xl bg-gray-50 p-6 border border-gray-200">
+        <h2 className="mb-6 text-lg font-semibold text-gray-900">
           Recent Posts
         </h2>
         <div className="space-y-6">
@@ -76,10 +76,10 @@ export default function Sidebar() {
                 {post.image}
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="mb-1 text-sm font-medium text-gray-900 dark:text-white line-clamp-2 group-hover:text-[#14467b] dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="mb-1 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#14467b] transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
+                <p className="text-xs text-gray-500">
                   {post.date}
                 </p>
               </div>
@@ -89,8 +89,8 @@ export default function Sidebar() {
       </div>
 
       {/* Categories */}
-      <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 p-6 border border-gray-200 dark:border-gray-700">
-        <h2 className="mb-6 text-lg font-semibold text-gray-900 dark:text-white">
+      <div className="rounded-xl bg-gray-50 p-6 border border-gray-200">
+        <h2 className="mb-6 text-lg font-semibold text-gray-900">
           Categories
         </h2>
         <ul className="space-y-3">
@@ -98,7 +98,7 @@ export default function Sidebar() {
             <li key={index}>
               <Link
                 href={`#category-${category.toLowerCase().replace(/\s+/g, '-')}`}
-                className="flex items-center justify-between text-sm text-gray-700 dark:text-gray-300 hover:text-[#14467b] dark:hover:text-blue-400 transition-colors group"
+                className="flex items-center justify-between text-sm text-gray-700 hover:text-[#14467b] transition-colors group"
               >
                 <span>{category}</span>
                 <svg

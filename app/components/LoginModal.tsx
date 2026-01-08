@@ -72,12 +72,12 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
       <div
         ref={modalRef}
-        className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-md mx-4 p-6 md:p-8 animate-in zoom-in-95 duration-200"
+        className="relative bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 md:p-8 animate-in zoom-in-95 duration-200"
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
           aria-label="Close modal"
         >
           <svg
@@ -96,12 +96,12 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
         </button>
 
         {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
           Login
         </h2>
 
         {/* Description */}
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6">
+        <p className="text-sm md:text-base text-gray-600 mb-6">
           Welcome back! Please login to your account to continue.
         </p>
 
@@ -109,7 +109,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email
             </label>
             <input
@@ -120,13 +120,13 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#14467b] focus:border-transparent transition-all"
             />
           </div>
 
           {/* Password */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
               Password
             </label>
             <div className="relative">
@@ -138,12 +138,12 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 pr-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 pr-12 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#14467b] focus:border-transparent transition-all"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
                 {showPassword ? (
@@ -194,13 +194,13 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 onChange={(e) => setRememberMe(e.target.checked)}
                 className="h-4 w-4 rounded border-gray-300 text-[#14467b] focus:ring-[#14467b] focus:ring-offset-0"
               />
-              <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+              <span className="ml-2 text-sm text-gray-700">
                 Remember me
               </span>
             </label>
             <Link
               href="#forgot-password"
-              className="text-sm text-[#14467b] dark:text-blue-400 hover:underline"
+              className="text-sm text-[#14467b] hover:underline"
             >
               Forgot password?
             </Link>
@@ -216,11 +216,11 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
           {/* Sign Up Link */}
           <div className="text-center pt-2">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600">
               Don't have an account?{' '}
               <Link
                 href="#signup"
-                className="text-[#14467b] dark:text-blue-400 font-medium hover:underline"
+                className="text-[#14467b] font-medium hover:underline"
               >
                 Sign up
               </Link>

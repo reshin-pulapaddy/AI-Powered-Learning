@@ -94,12 +94,12 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
       <div
         ref={modalRef}
-        className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-md mx-4 p-6 md:p-8 animate-in zoom-in-95 duration-200"
+        className="relative bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 md:p-8 animate-in zoom-in-95 duration-200"
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
           aria-label="Close modal"
         >
           <svg
@@ -118,12 +118,12 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
         </button>
 
         {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
           Book a Demo
         </h2>
 
         {/* Description */}
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6">
+        <p className="text-sm md:text-base text-gray-600 mb-6">
           Want to get in touch with CES LEAP Academy? Fill out the form with your inquiry or find the contact details below.
         </p>
 
@@ -138,7 +138,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
               value={formData.fullName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#14467b] focus:border-transparent transition-all"
             />
           </div>
 
@@ -151,7 +151,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#14467b] focus:border-transparent transition-all"
             />
           </div>
 
@@ -162,7 +162,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
               <button
                 type="button"
                 onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-                className="flex items-center gap-2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500"
+                className="flex items-center gap-2 px-3 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#14467b]"
               >
                 {/* India Flag */}
                 <div className="flex items-center gap-1.5">
@@ -192,14 +192,14 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
               {/* Dropdown Menu */}
               {showCountryDropdown && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
                   <button
                     type="button"
                     onClick={() => {
                       setCountryCode('+91');
                       setShowCountryDropdown(false);
                     }}
-                    className="w-full flex items-center gap-2 px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+                    className="w-full flex items-center gap-2 px-4 py-2 text-left hover:bg-gray-100 transition-colors"
                   >
                     <div className="w-5 h-4 rounded-sm overflow-hidden flex flex-col">
                       <div className="h-1/3 bg-[#FF9933]"></div>
@@ -223,7 +223,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500 focus:border-transparent transition-all"
+              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#14467b] focus:border-transparent transition-all"
             />
           </div>
 
@@ -236,7 +236,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500 focus:border-transparent transition-all resize-y"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#14467b] focus:border-transparent transition-all resize-y"
             />
           </div>
 

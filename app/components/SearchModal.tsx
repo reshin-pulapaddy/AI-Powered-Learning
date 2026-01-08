@@ -64,7 +64,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   return (
     <div
       ref={modalRef}
-      className="absolute right-0 top-full mt-2 z-40 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg hidden md:block animate-in fade-in slide-in-from-top-2 duration-200 min-w-[400px]"
+      className="absolute right-0 top-full mt-2 z-40 bg-white shadow-lg border border-gray-200 rounded-lg hidden md:block animate-in fade-in slide-in-from-top-2 duration-200 min-w-[400px]"
       onMouseLeave={onClose}
     >
       <form onSubmit={handleSubmit} className="p-4">
@@ -75,7 +75,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             value={searchQuery}
             onChange={handleChange}
             placeholder="Search Product, Service or Course name..."
-            className="w-full px-4 py-2.5 pl-10 pr-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14467b] dark:focus:ring-blue-500 focus:border-transparent transition-all text-sm"
+            className="w-full px-4 py-2.5 pl-10 pr-4 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#14467b] focus:border-transparent transition-all text-sm"
           />
           {/* Search Icon */}
           <div className="absolute left-3 top-1/2 -translate-y-1/2">

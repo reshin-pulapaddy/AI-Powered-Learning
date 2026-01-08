@@ -42,7 +42,7 @@ export default function CoursesMenu({ isOpen, onClose }: { isOpen: boolean; onCl
   return (
     <div
       ref={menuRef}
-      className="absolute left-0 top-full mt-2 z-40 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg hidden md:block animate-in fade-in slide-in-from-top-2 duration-200 min-w-[260px]"
+      className="absolute left-0 top-full mt-2 z-40 bg-white shadow-lg border border-gray-200 rounded-lg hidden md:block animate-in fade-in slide-in-from-top-2 duration-200 min-w-[260px]"
       onMouseLeave={onClose}
     >
       <ul className="py-2">
@@ -50,7 +50,7 @@ export default function CoursesMenu({ isOpen, onClose }: { isOpen: boolean; onCl
           <li key={index}>
             <Link
               href={item.href}
-              className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-[#14467b] hover:text-white transition-colors"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#14467b] hover:text-white transition-colors"
             >
               {item.name}
             </Link>

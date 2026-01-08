@@ -166,7 +166,7 @@ export default function Chatbot() {
       {isOpen && (
         <div
           ref={chatContainerRef}
-          className="fixed bottom-24 right-6 z-[60] w-96 h-[600px] bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300"
+          className="fixed bottom-24 right-6 z-[60] w-96 h-[600px] bg-white rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-[#0ea5e9] via-[#06b6d4] to-[#14b8a6] text-white p-4 rounded-t-lg flex items-center justify-between">
@@ -213,7 +213,7 @@ export default function Chatbot() {
           </div>
 
           {/* Messages Area */}
-          <div className="chatbot-messages flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
+          <div className="chatbot-messages flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -223,7 +223,7 @@ export default function Chatbot() {
                   className={`max-w-[80%] rounded-lg px-4 py-2 ${
                     message.sender === 'user'
                       ? 'bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white'
-                      : 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white'
+                      : 'bg-white text-gray-900'
                   }`}
                 >
                   <p className="text-sm">{message.text}</p>
@@ -250,7 +250,7 @@ export default function Chatbot() {
           </div>
 
           {/* Input Area */}
-          <div className="border-t border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-gray-800 rounded-b-lg">
+          <div className="border-t border-gray-200 p-4 bg-white rounded-b-lg">
             <form onSubmit={handleSendMessage} className="flex gap-2">
               <input
                 type="text"
@@ -262,7 +262,7 @@ export default function Chatbot() {
                     : 'Type your message...'
                 }
                 disabled={messages.filter((m) => m.sender === 'user').length === 0}
-                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] dark:bg-gray-700 dark:text-white disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:cursor-not-allowed text-sm"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] bg-white text-gray-900 disabled:bg-gray-100 disabled:cursor-not-allowed text-sm"
               />
               <button
                 type="submit"

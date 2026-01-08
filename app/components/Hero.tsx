@@ -56,7 +56,7 @@ export default function Hero() {
             {/* Decorative Wave */}
             <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
                 <svg
-                    className="w-full h-12 text-white dark:text-gray-900"
+                    className="w-full h-12 text-white"
                     fill="currentColor"
                     viewBox="0 0 1200 120"
                     preserveAspectRatio="none"
