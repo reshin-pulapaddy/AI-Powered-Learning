@@ -14,13 +14,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hi! Welcome to CES LEAP Academy - AI Powered Corporate Training & Upskilling Platform',
-      sender: 'bot',
-      timestamp: new Date(),
-    },
-    {
-      id: '2',
-      text: 'How can we help you?',
+      text: 'Hello! 👋 Welcome to CES LEAP Academy. I\'m here to help you with your training and upskilling needs.',
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -28,13 +22,14 @@ export default function Chatbot() {
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const MAX_MESSAGES = 7;
 
   const quickOptions = [
-    'I represent a company that has training and upskilling needs',
-    'I want a demo of CES LEAP Academy LMS/LXP/Frontline Training Solution',
-    'I want certified trainers for my company\'s training reqs',
-    'I\'m a working professional looking to upskill',
-    'I\'m just exploring',
+    'I represent a company with training needs',
+    'I want a demo of your platform',
+    'I need certified trainers',
+    'I\'m a professional looking to upskill',
+    'Just exploring options',
   ];
 
   useEffect(() => {
@@ -67,7 +62,53 @@ export default function Chatbot() {
     };
   }, [isOpen]);
 
+  const getBotResponse = (userMessage: string, messageCount: number): string => {
+    const lowerMessage = userMessage.toLowerCase();
+    
+    if (lowerMessage.includes('company') || lowerMessage.includes('training needs')) {
+      if (messageCount < 4) {
+        return 'Great! We specialize in corporate training solutions. What specific skills or areas would you like to train your team on?';
+      } else {
+        return 'Perfect! Our team can create a customized training program for your company. Would you like to schedule a call to discuss your requirements?';
+      }
+    } else if (lowerMessage.includes('demo') || lowerMessage.includes('platform')) {
+      if (messageCount < 4) {
+        return 'Excellent! Our platform offers AI-powered learning, real-time analytics, and personalized training paths. What features interest you most?';
+      } else {
+        return 'I\'d love to show you a demo! You can schedule one through our website or call us at 044 4741 0999. Would that work for you?';
+      }
+    } else if (lowerMessage.includes('trainer') || lowerMessage.includes('certified')) {
+      if (messageCount < 4) {
+        return 'We have a network of certified trainers across various domains. What subject areas are you looking for?';
+      } else {
+        return 'We can connect you with expert trainers. Please share your contact details, and our team will reach out within 24 hours.';
+      }
+    } else if (lowerMessage.includes('professional') || lowerMessage.includes('upskill') || lowerMessage.includes('individual')) {
+      if (messageCount < 4) {
+        return 'That\'s wonderful! We offer courses in AI, Generative AI, Microsoft Copilot, and more. Which area interests you?';
+      } else {
+        return 'Great choice! You can browse our courses on the website or speak with our advisors. Would you like more information on any specific course?';
+      }
+    } else if (lowerMessage.includes('exploring') || lowerMessage.includes('just') || lowerMessage.includes('options')) {
+      if (messageCount < 4) {
+        return 'No problem! We offer corporate training, individual courses, and coaching programs. What would you like to know more about?';
+      } else {
+        return 'Feel free to explore our website or reach out anytime. You can also call us at 044 4741 0999 for personalized assistance.';
+      }
+    } else {
+      if (messageCount < 4) {
+        return 'I understand. Could you tell me more about what you\'re looking for? I can help you find the right solution.';
+      } else {
+        return 'Thank you for your interest! Our team will be happy to assist you. You can reach us at hello@cesleapacademy.com or call 044 4741 0999.';
+      }
+    }
+  };
+
   const handleQuickOptionClick = (option: string) => {
+    if (messages.length >= MAX_MESSAGES) {
+      return;
+    }
+
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -79,19 +120,29 @@ export default function Chatbot() {
 
     // Simulate bot response
     setTimeout(() => {
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: 'Thank you for your interest! Our team will get back to you shortly. In the meantime, feel free to explore our website or schedule a demo.',
-        sender: 'bot',
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, botMessage]);
+      if (messages.length + 1 < MAX_MESSAGES) {
+        const botMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: getBotResponse(option, messages.length + 1),
+          sender: 'bot',
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, botMessage]);
+      } else {
+        const botMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: 'Thank you for chatting with us! For detailed assistance, please contact us at hello@cesleapacademy.com or call 044 4741 0999. We\'re here to help! 🙌',
+          sender: 'bot',
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, botMessage]);
+      }
     }, 1000);
   };
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!inputValue.trim()) return;
+    if (!inputValue.trim() || messages.length >= MAX_MESSAGES) return;
 
     // Add user message
     const userMessage: Message = {
@@ -101,17 +152,28 @@ export default function Chatbot() {
       timestamp: new Date(),
     };
     setMessages((prev) => [...prev, userMessage]);
+    const currentMessageCount = messages.length + 1;
     setInputValue('');
 
     // Simulate bot response
     setTimeout(() => {
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: 'Thank you for your message! Our team will respond to you shortly. For immediate assistance, please call us at +91 7353948100 or email hello@cesleapacademy.com',
-        sender: 'bot',
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, botMessage]);
+      if (currentMessageCount < MAX_MESSAGES - 1) {
+        const botMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: getBotResponse(userMessage.text, currentMessageCount),
+          sender: 'bot',
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, botMessage]);
+      } else {
+        const botMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: 'Thank you for chatting with us! For detailed assistance, please contact us at hello@cesleapacademy.com or call 044 4741 0999. We\'re here to help! 🙌',
+          sender: 'bot',
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, botMessage]);
+      }
     }, 1000);
   };
 
@@ -231,8 +293,8 @@ export default function Chatbot() {
               </div>
             ))}
 
-            {/* Quick Options (only show if no user messages yet) */}
-            {messages.filter((m) => m.sender === 'user').length === 0 && (
+            {/* Quick Options (only show if no user messages yet and under message limit) */}
+            {messages.filter((m) => m.sender === 'user').length === 0 && messages.length < MAX_MESSAGES && (
               <div className="space-y-2 mt-4">
                 {quickOptions.map((option, index) => (
                   <button
@@ -243,6 +305,15 @@ export default function Chatbot() {
                     {option}
                   </button>
                 ))}
+              </div>
+            )}
+
+            {/* Message limit warning */}
+            {messages.length >= MAX_MESSAGES && (
+              <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-sm text-blue-800 text-center">
+                  💬 For more detailed assistance, please contact us directly at hello@cesleapacademy.com or call 044 4741 0999
+                </p>
               </div>
             )}
 
@@ -257,16 +328,18 @@ export default function Chatbot() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder={
-                  messages.filter((m) => m.sender === 'user').length === 0
+                  messages.length >= MAX_MESSAGES
+                    ? 'Message limit reached. Please contact us directly.'
+                    : messages.filter((m) => m.sender === 'user').length === 0
                     ? 'Please select an option above...'
                     : 'Type your message...'
                 }
-                disabled={messages.filter((m) => m.sender === 'user').length === 0}
+                disabled={messages.filter((m) => m.sender === 'user').length === 0 || messages.length >= MAX_MESSAGES}
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] bg-white text-gray-900 disabled:bg-gray-100 disabled:cursor-not-allowed text-sm"
               />
               <button
                 type="submit"
-                disabled={!inputValue.trim() || messages.filter((m) => m.sender === 'user').length === 0}
+                disabled={!inputValue.trim() || messages.filter((m) => m.sender === 'user').length === 0 || messages.length >= MAX_MESSAGES}
                 className="px-4 py-2 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] hover:from-[#06b6d4] hover:to-[#14b8a6] text-white rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Send message"
               >

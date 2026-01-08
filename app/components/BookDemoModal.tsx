@@ -18,6 +18,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
   });
   const [countryCode, setCountryCode] = useState('+91');
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -78,7 +79,23 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
     // Handle form submission here
     console.log('Form submitted:', { ...formData, countryCode });
     // You can add API call here
-    onClose();
+    
+    // Reset form
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
+    
+    // Show toast
+    setShowToast(true);
+    
+    // Auto-hide toast after 3 seconds and close modal
+    setTimeout(() => {
+      setShowToast(false);
+      onClose();
+    }, 3000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -91,7 +108,33 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+    <>
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed top-4 right-4 z-[110] animate-in slide-in-from-top-5 fade-in duration-300">
+          <div className="bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center gap-3 min-w-[300px]">
+            <svg
+              className="h-6 w-6 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            <div>
+              <p className="font-semibold">Thank you!</p>
+              <p className="text-sm">Your request has been submitted successfully. We'll get back to you soon.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
       <div
         ref={modalRef}
         className="relative bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 md:p-8 animate-in zoom-in-95 duration-200"
@@ -250,6 +293,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
         </form>
       </div>
     </div>
+    </>
   );
 }
 
